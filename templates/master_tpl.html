@@ -2,10 +2,20 @@
 <html>
 <head>
     <title>{% block page_title %}{% endblock page_title %}</title>
+    <link rel="stylesheet" href="/static/main.css" type="text/css" />
+    {% block page_header %}{% endblock page_header %}
 </head>
 <body>
-{% block page_body %}
-{% endblock page_body %}
+    <div id="logo" >Logo Image</div>
+    <div id="login_header"><a href="/login" id="login_link" >Login</a></div>
+    <div id="links">
+        {% block page_links %}
+        {% endblock page_links %}
+    </div>
+    <div id="content">
+        {% block page_body %}
+        {% endblock page_body %}
+    </div>
 <footer>
     {% block page_footer %}{% endblock page_footer %}
 </footer>
