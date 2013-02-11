@@ -1,7 +1,12 @@
 {% extends "master_tpl.html" %}
 {% block page_body %}
-    <form id="login1" action="/login1" method="post">
-        <label for="username">Username:</label>  <input type="text"  name="username" id="username" />
+    {% if error %}
+        <h2>{{ error }}</h2>
+    {% endif %}
+    <form id="login1" action="/login" method="post" style="border: 2 2 2 2;border-style: solid; width: 300px;">
+        <label for="username">Username:</label>  <input type="text"  name="username" id="username" /><br/>
+        <label for="password1">Password:</label>  <input type="password" name="password1" id="password1"/><br/>
+        <label for="password2">Password:</label>  <input type="password" name="password2" id="password2"/><br/>
         <input type="submit" value="submit" />
     </form>
 {% endblock page_body %}
