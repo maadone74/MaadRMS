@@ -1,6 +1,7 @@
 # MaadRMS -- Open Source Restaurant Management System
 # Created by: Maadworks Software
 from flask import Flask, Session
+from flask.templating import render_template
 
 app = Flask(__name__)
 
@@ -11,7 +12,7 @@ def get_home():
 
 @app.route('/login')
 def get_login():
-    return 'Login Page'
+    return render_template('login_tpl.html')
 
 @app.route('/kitchen')
 def get_kitchen():
