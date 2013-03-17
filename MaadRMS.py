@@ -57,7 +57,7 @@ def get_login():
     # was GET or the credentials were invalid
     return render_template('login_tpl.html', error=error)
 
-@app.route('logout')
+@app.route('/logout')
 def get_logout():
     # remove the username from the session if it's there
     session.pop('username', None)
