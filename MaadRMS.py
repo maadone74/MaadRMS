@@ -1,6 +1,6 @@
 # MaadRMS -- Open Source Restaurant Management System
 # Created by: Maadworks Software
-from flask import Flask, session, request, url_for
+from flask import Flask, session, request, url_for, redirect
 from flask.templating import render_template
 import pymongo
 
@@ -56,6 +56,13 @@ def get_login():
     # the code below this is executed if the request method
     # was GET or the credentials were invalid
     return render_template('login_tpl.html', error=error)
+
+@app.route('logout')
+def get_logout():
+    # remove the username from the session if it's there
+    session.pop('username', None)
+    return redirect(url_for('get_home'))
+
 
 @app.route('/kitchen')
 def get_kitchen():
