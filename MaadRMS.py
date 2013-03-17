@@ -1,10 +1,13 @@
 # MaadRMS -- Open Source Restaurant Management System
 # Created by: Maadworks Software
-from flask import Flask, Session, request
+from flask import Flask, session, request, url_for
 from flask.templating import render_template
 import pymongo
 
 app = Flask(__name__)
+
+# set the secret key.  keep this really secret:
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 ##
 # Supporting Functions
@@ -25,12 +28,13 @@ def valid_login(username, pass1, pass2):
         return False
     if userDoc['passwd'] != pass1:
         return False
+    session['username'] = username
     return True
 
 
 def login_the_user(username):
     """Setups the user for a session"""
-    return render_template('home_tpl.html')
+    return render_template('main_menu_tpl.html')
 
 #
 # routes
