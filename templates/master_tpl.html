@@ -8,7 +8,9 @@
 <body>
     <div id="logo" ><img src="/static/images/MaadRMSLogo.png" /></div>
     {% if session['username'] %}
-    <div id="login_header">Logged on as {{ session['username'] }}</div>
+    <div id="login_header">Logged on as {{ session['username'] }}
+        <a href="/logout" id="logout_link" >Log out</a>
+    </div>
     {%  else %}
     <div id="login_header"><a href="/login" id="login_link" >Login</a></div>
     {% endif %}
