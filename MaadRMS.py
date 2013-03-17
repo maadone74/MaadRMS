@@ -12,14 +12,27 @@ app = Flask(__name__)
 
 def valid_login(username, pass1, pass2):
     """Validates if the username and passwords are in proper
-    formats"""
-    return False
+    formats. It also checks if the user is in the database
+    and passwords match"""
+   # return False
+    if pass1 != pass2:
+        return False
+    mongoConnection = pymongo.MongoClient()
+    MaadRMSDb = mongoConnection.MaadRMS
+    usersCollection = MaadRMSDb.users
+    userDoc = usersCollection.find_one({"username" : username})
+    if userDoc is None:
+        return False
+    if userDoc['passwd'] != pass1:
+        return False
+    return True
+
 
 def login_the_user(username):
-    """Looks for the user in the database"""
-    pass
+    """Setups the user for a session"""
+    return render_template('home_tpl.html')
 
-##
+#
 # routes
 ##
 
