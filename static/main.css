@@ -36,6 +36,7 @@ div#links {
 :link {
     text-decoration: none;
     text-align: center;
+    height: 80px;
 }
 
 div#content {
