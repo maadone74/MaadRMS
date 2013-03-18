@@ -20,8 +20,9 @@ div#login_header {
     margin: 0 0 0 0;
 }
 
-div#links {
+nav#links {
     text-decoration: none;
+    text-align: center;
     width: 150px;
     height: 600px;
     float: left;
@@ -30,6 +31,11 @@ div#links {
     border-style: solid;
     padding: 0 0 0 0;
     margin: 0 0 0 0;
+}
+
+nav :link {
+    text-decoration: none;
+    text-align: center;
 }
 
 div#content {
