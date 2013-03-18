@@ -20,7 +20,7 @@ div#login_header {
     margin: 0 0 0 0;
 }
 
-nav#links {
+div#links {
     text-decoration: none;
     text-align: center;
     width: 150px;
@@ -33,7 +33,7 @@ nav#links {
     margin: 0 0 0 0;
 }
 
-nav :link {
+:link {
     text-decoration: none;
     text-align: center;
 }
