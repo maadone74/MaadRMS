@@ -5,3 +5,6 @@
  * Time: 9:10 PM
  * To change this template use File | Settings | File Templates.
  */
+$(function () {
+    $('#logo').hide();
+});
