@@ -7,4 +7,6 @@
  */
 $(function () {
     $('#logo').hide();
+    $('#links').fadeOut(500);
+    $('#content').css('width' , '805px');
 });
