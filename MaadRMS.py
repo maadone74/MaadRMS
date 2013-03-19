@@ -70,7 +70,7 @@ def get_kitchen():
 
 @app.route('/servers')
 def get_servers():
-    return 'Server Pages'
+    return render_template('server_tpl.html')
 
 @app.route('/bar')
 def get_bar():
