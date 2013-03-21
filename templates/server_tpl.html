@@ -13,7 +13,9 @@
     <a href="/order">Order Menu</a><br/>
 {% endblock page_links %}
 {% block page_body %}
-
+    {% if obj is not None %}
+    {% else %}
+    {% endif %}
 {% endblock page_body %}
 {% block page_footer %}
 {% endblock page_footer %}
