@@ -1,6 +1,6 @@
 # MaadRMS -- Open Source Restaurant Management System
 # Created by: Maadworks Software
-from flask import Flask, session, request, url_for, redirect
+from flask import Flask, session, request, url_for, redirect, flash
 from flask.templating import render_template
 import pymongo
 
