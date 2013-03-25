@@ -10,7 +10,15 @@
     <a href="/order">Order Menu</a><br/>
 {% endblock page_links %}
 {% block page_body %}
-
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 {% endblock page_body %}
 {% block page_footer %}
 {% endblock page_footer %}
