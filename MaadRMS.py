@@ -9,6 +9,10 @@ app = Flask(__name__)
 # set the secret key.  keep this really secret:
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
+#set database connections
+mongoConnection = pymongo.MongoClient()
+MaadRMSDB = mongoConnection.MaadRMS
+
 ##
 # Supporting Functions
 ##
@@ -20,15 +24,14 @@ def valid_login(username, pass1, pass2):
    # return False
     if pass1 != pass2:
         return False
-    mongoConnection = pymongo.MongoClient()
-    MaadRMSDb = mongoConnection.MaadRMS
-    usersCollection = MaadRMSDb.users
+    usersCollection = MaadRMSDB.users
     userDoc = usersCollection.find_one({"username" : username})
     if userDoc is None:
         return False
     if userDoc['passwd'] != pass1:
         return False
     session['username'] = username
+    flash('You are successfully logged in!')
     return True
 
 
