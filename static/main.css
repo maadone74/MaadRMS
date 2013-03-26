@@ -52,3 +52,7 @@ div#content {
 form#login1 {
     text-align: center;
 }
+
+#login1 input {
+    width: 150px;
+}
