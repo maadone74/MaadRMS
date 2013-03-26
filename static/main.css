@@ -48,3 +48,7 @@ div#content {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
 }
+
+form#login1 {
+    text-align: center;
+}
