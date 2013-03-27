@@ -5,17 +5,16 @@
     <script type="text/javascript" src="/static/server_page.js"></script>
 {% endblock page_header %}
 {% block page_links %}
-    <a href="/admin">Admin Menu</a><br/>
-    <a href="/manager">Manager Menu</a><br/>
-    <a href="/bar">Bar Menu</a><br/>
-    <a href="/servers">Server Menu</a><br/>
-    <a href="/kitchen">Kitchen Menu</a><br/>
-    <a href="/order">Order Menu</a><br/>
+    <ul>
+        <li><a href="/admin" class="ui-btn-active">Admin</a></li>
+        <li><a href="/manager">Manager</a></li>
+        <li><a href="/bar">Bar</a></li>
+        <li><a href="/servers">Servers</a></li>
+        <li><a href="/kitchen">Kitchen</a></li>
+        <li><a href="/order">Order</a></li>
+    </ul>
 {% endblock page_links %}
 {% block page_body %}
-    {% if obj is not None %}
-    {% else %}
-    {% endif %}
 {% endblock page_body %}
 {% block page_footer %}
 {% endblock page_footer %}
