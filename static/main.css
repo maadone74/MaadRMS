@@ -20,24 +20,6 @@ div#login_header {
     margin: 0 0 0 0;
 }
 
-div#links {
-    text-decoration: none;
-    text-align: center;
-    height: 600px;
-    float: left;
-    clear: both;
-    border: 0px 2px 1px 1px;
-    border-style: solid;
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
-}
-
-:link {
-    text-decoration: none;
-    text-align: center;
-    height: 80px;
-}
-
 div#content {
     width: 805px;
     height: 600px;
