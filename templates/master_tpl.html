@@ -15,13 +15,18 @@
         {% block page_links %}
         {% endblock page_links %}
     </div>
-    <div id="logo" ><img src="/static/images/MaadRMSLogo.png" /></div>
+   <!--- <div id="logo" ><img src="/static/images/MaadRMSLogo.png" /></div> -->
     {% if session['username'] %}
-    <div id="login_header">Logged on as {{ session['username'] }}
+    <div id="login_header" data-role="header">
         <a href="/logout" id="logout_link" >Log out</a>
+        <h1>MaadRMS Restaurant Mangement System Ver: {{ VERSION }}</h1>
+        Logged on as {{ session['username'] }}
     </div>
     {%  else %}
-    <div id="login_header"><a href="/login" id="login_link" >Login</a></div>
+    <div id="login_header" data-role="header">
+        <a href="/login" id="login_link" >Login</a>
+        <h2>MaadRMS Restaurant Mangement System Ver: {{ VERSION }}</h2>
+    </div>
     {% endif %}
 
     <div id="content" data-role="content">
@@ -31,9 +36,9 @@
         {% block page_body %}
         {% endblock page_body %}
     </div>
-<div data-role="footer">
+    <div data-role="footer">
     {% block page_footer %}{% endblock page_footer %}
-</div>
+    </div>
 </div>
 </body>
 </html>
