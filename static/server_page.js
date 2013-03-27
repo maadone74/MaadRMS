@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
  $(function () {
-    $('#logo').hide();
+//    $('#logo').hide();
  // $('#links').fadeOut(500);
     $('#content').css('width' , '805px');
 });
