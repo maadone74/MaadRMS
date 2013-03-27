@@ -26,7 +26,9 @@
     {% endif %}
 
     <div id="content">
-        <a href="#linkpanel">Open Menu</a><br/>
+        {% if session['username'] %}
+            <a href="#linkpanel" id="openmenu">Open Menu</a><br/>
+        {% endif %}
         {% block page_body %}
         {% endblock page_body %}
     </div>
