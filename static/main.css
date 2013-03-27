@@ -23,7 +23,6 @@ div#login_header {
 div#links {
     text-decoration: none;
     text-align: center;
-    width: 150px;
     height: 600px;
     float: left;
     clear: both;
@@ -40,7 +39,7 @@ div#links {
 }
 
 div#content {
-    width: 650px;
+    width: 805px;
     height: 600px;
     float: left;
     border: 0px 2px 1px 1px;
