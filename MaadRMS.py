@@ -3,7 +3,7 @@
 from flask import Flask, session, request, url_for, redirect, flash
 from flask.templating import render_template
 import pymongo
-import config
+from config import VERSION
 
 app = Flask(__name__)
 
@@ -46,7 +46,7 @@ def login_the_user(username):
 
 @app.route('/')
 def get_home():
-    return render_template('home_tpl.html')
+    return render_template('home_tpl.html', VERSION=VERSION)
 
 @app.route('/login', methods=['POST','GET'])
 def get_login():
@@ -59,7 +59,7 @@ def get_login():
             error = 'Invalid username/password'
     # the code below this is executed if the request method
     # was GET or the credentials were invalid
-    return render_template('login_tpl.html', error=error)
+    return render_template('login_tpl.html', error=error, VERSION=VERSION)
 
 @app.route('/logout')
 def get_logout():
@@ -74,7 +74,7 @@ def get_kitchen():
 
 @app.route('/servers')
 def get_servers():
-    return render_template('server_tpl.html', obj = None)
+    return render_template('server_tpl.html', obj = None, VERSION=VERSION)
 
 @app.route('/bar')
 def get_bar():
