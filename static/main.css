@@ -1,34 +1,5 @@
 /* This is for the master template*/
 
-div#logo {
-    width: 805px;
-    height: 200px;
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
-}
-
-div#login_header {
-    width: 805px;
-    height: 50px;
-    text-align:  right;
-    border-right: 0;
-    border-left: 0;
-    border-top: 0;
-    border-bottom: 4px;
-    border-style: solid;
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
-}
-
-div#content {
-    width: 805px;
-    height: 600px;
-    float: left;
-    border: 0px 2px 1px 1px;
-    border-style: solid;
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
-}
 
 form#login1 {
     text-align: center;
