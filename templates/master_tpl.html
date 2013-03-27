@@ -9,6 +9,13 @@
     {% block page_header %}{% endblock page_header %}
 </head>
 <body>
+<div data-role="page">
+<div data-role="panel" id="linkpanel">
+    <div id="links" data-role="navbar">
+        {% block page_links %}
+        {% endblock page_links %}
+    </div><!-- /navbar -->
+</div>
     <div id="logo" ><img src="/static/images/MaadRMSLogo.png" /></div>
     {% if session['username'] %}
     <div id="login_header">Logged on as {{ session['username'] }}
@@ -17,17 +24,16 @@
     {%  else %}
     <div id="login_header"><a href="/login" id="login_link" >Login</a></div>
     {% endif %}
-    <div id="links" data-role="navbar">
-        {% block page_links %}
-        {% endblock page_links %}
-    </div><!-- /navbar -->
+
     <div id="content">
+        <a href="#linkpanel">Open Menu</a><br/>
         {% block page_body %}
         {% endblock page_body %}
     </div>
 <footer>
     {% block page_footer %}{% endblock page_footer %}
 </footer>
+</div>
 </body>
 </html>
 
