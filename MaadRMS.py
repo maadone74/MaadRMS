@@ -38,7 +38,7 @@ def valid_login(username, pass1, pass2):
 
 def login_the_user(username):
     """Setups the user for a session"""
-    return render_template('main_menu_tpl.html')
+    return render_template('main_menu_tpl.html', VERSION=VERSION)
 
 #
 # routes
@@ -65,7 +65,7 @@ def get_login():
 def get_logout():
     # remove the username from the session if it's there
     session.pop('username', None)
-    return redirect(url_for('get_home'))
+    return redirect(url_for('get_home'), VERSION=VERSION)
 
 
 @app.route('/kitchen')
