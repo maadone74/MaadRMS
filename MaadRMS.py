@@ -65,7 +65,7 @@ def get_login():
 def get_logout():
     # remove the username from the session if it's there
     session.pop('username', None)
-    return redirect(url_for('get_home'), VERSION=VERSION)
+    return redirect(url_for('get_home'))
 
 
 @app.route('/kitchen')
