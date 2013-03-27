@@ -1,3 +1,3 @@
 __author__ = 'devon'
 
-VERSION = '.12'
+VERSION = '0.12'
