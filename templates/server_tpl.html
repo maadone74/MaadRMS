@@ -2,19 +2,21 @@
 {% block page_title %}Server Page for MaadRMS{% endblock page_title %}
 {% block page_header %}
   <!--  <script type="text/javascript" src="/static/jquery-1.9.1.js"></script> -->
-    <script type="text/javascript" src="/static/server_page.js"></script>
+
 {% endblock page_header %}
 {% block page_links %}
     <ul>
-        <li><a href="/admin" class="ui-btn-active">Admin</a></li>
-        <li><a href="/manager">Manager</a></li>
-        <li><a href="/bar">Bar</a></li>
-        <li><a href="/servers">Servers</a></li>
-        <li><a href="/kitchen">Kitchen</a></li>
-        <li><a href="/order">Order</a></li>
+        <li><a  data-role="button" href="/admin" class="ui-btn-active">Admin</a></li>
+        <li><a  data-role="button" href="/manager">Manager</a></li>
+        <li><a  data-role="button" href="/bar">Bar</a></li>
+        <li><a  data-role="button" href="/servers">Servers</a></li>
+        <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
+        <li><a   data-role="button" href="/order">Order</a></li>
+        <li data-icon="delete"><a  data-role="button" href="#" data-rel="close">Close panel</a></li>
     </ul>
 {% endblock page_links %}
 {% block page_body %}
 {% endblock page_body %}
 {% block page_footer %}
+    <script type="text/javascript" src="/static/server_page.js"></script>
 {% endblock page_footer %}
