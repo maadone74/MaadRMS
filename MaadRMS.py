@@ -3,6 +3,7 @@
 from flask import Flask, session, request, url_for, redirect, flash
 from flask.templating import render_template
 import pymongo
+import config
 
 app = Flask(__name__)
 
