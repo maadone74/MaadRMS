@@ -31,7 +31,7 @@
 
     <div id="content" data-role="content">
         {% if session['username'] %}
-            <a href="#linkpanel" id="openmenu">Open Menu</a><br/>
+            <a href="#linkpanel" id="openmenu" data-role="button">Open Menu</a><br/>
         {% endif %}
         {% block page_body %}
         {% endblock page_body %}
