@@ -74,7 +74,12 @@ def get_kitchen():
 
 @app.route('/servers')
 def get_servers():
-    return render_template('server_tpl.html', obj = None, VERSION=VERSION)
+    # only want unique categories, this is why we use set
+    obj1 = set()
+    menuCollection = MaadRMSDB.menuItems
+    for docs in menuCollection.find():
+        obj1.add(docs['category'])
+    return render_template('server_tpl.html', obj1=obj1, VERSION=VERSION)
 
 @app.route('/bar')
 def get_bar():
