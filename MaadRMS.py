@@ -32,6 +32,8 @@ def valid_login(username, pass1, pass2):
     if userDoc['passwd'] != pass1:
         return False
     session['username'] = username
+    # added role of admin , default for now
+    session['role'] = 'admin'
     flash('You are successfully logged in!')
     return True
 
