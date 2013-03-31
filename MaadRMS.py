@@ -65,8 +65,9 @@ def get_login():
 
 @app.route('/logout')
 def get_logout():
-    # remove the username from the session if it's there
+    # remove the username and role from the session if it's there
     session.pop('username', None)
+    session.pop('role', None)
     return redirect(url_for('get_home'))
 
 
