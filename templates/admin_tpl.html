@@ -7,13 +7,22 @@
     <span style="color: yellow">Administrator System</span>
 {% endblock page_header %}
 {% block page_body %}
-    {% if obj1 %}
-        <ul data-role="listview">
-            {% for cat in obj1 %}
-                <li><a href="#" >{{ cat }}</a></li>
-            {% endfor %}
-        </ul>
-    {%  endif %}
+    {% if currentProcess %}
+        {% if currentProcess == 'default' %}
+            <ul data-role="listview">
+                <li><a href="/admin/add">Add User</a></li>
+                <li><a href="/admin/update">Update User</a></li>
+                <li><a href="/admin/remove">Delete User</a></li>
+            </ul>
+        {% endif %}
+        {% if obj1 %}
+            <ul data-role="listview">
+                {% for cat in obj1 %}
+                    <li><a href="#" >{{ cat }}</a></li>
+                {% endfor %}
+            </ul>
+        {%  endif %}
+    {% endif %}
 {% endblock page_body %}
 {% block page_footer %}
 {% endblock page_footer %}
