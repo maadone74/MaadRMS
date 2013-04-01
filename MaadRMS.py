@@ -89,8 +89,11 @@ def get_bar():
     return 'Bar Page'
 
 @app.route('/admin')
-def get_admin():
-    return render_template('admin_tpl.html')
+@app.route('/admin/<currentProcess>')
+def get_admin(currentProcess = None):
+    if currentProcess is None:
+        currentProcess = 'default'
+    return render_template('admin_tpl.html', currentProcess=currentProcess)
 
 @app.route('/manager')
 def get_managers():
