@@ -14,6 +14,16 @@
                 <li><a href="/admin/update">Update User</a></li>
                 <li><a href="/admin/remove">Delete User</a></li>
             </ul>
+        {% elif currentProcess == 'add' %}
+                <h2>Add User....</h2>
+                <form id='addForm1'>
+                    <label for="text-username">Username:</label>
+                    <input name="text-username" id="text-username" value="" placeholder="username" type="text" />
+                    <label for="text-firstname">First Name:</label>
+                    <input name="text-firstname" id="text-firstname" value="" placeholder="John" type="text" />
+                    <label for="text-lastname">Last Name:</label>
+                    <input name="text-lastname" id="text-lastname" value="" placeholder="Smith" type="text" />
+                </form>
         {% endif %}
         {% if obj1 %}
             <ul data-role="listview">
