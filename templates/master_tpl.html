@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
-    {% block page_header %}{% endblock page_header %}
 </head>
 <body>
 <div data-role="page">
@@ -46,13 +45,13 @@
         <a href="/logout" id="logout_link" >Log out</a>
         <h1>MaadRMS Restaurant Mangement System Ver: {{ VERSION }}</h1>
         Logged on as {{ session['username'] }}
-    </header>
     {%  else %}
     <header id="login_header" data-role="header">
         <a href="/login" id="login_link" >Login</a>
         <h2>MaadRMS Restaurant Mangement System Ver: {{ VERSION }}</h2>
-    </header>
     {% endif %}
+        {% block page_header %}{% endblock page_header %}
+    </header>
 
     <div id="content" data-role="content">
         {% if session['username'] %}
