@@ -12,13 +12,29 @@
 <div data-role="page">
     <div data-role="panel" id="linkpanel" data-display="overlay">
         <ul>
-            <li><a data-role="button" href="/admin" class="ui-btn-active">Admin</a></li>
-            <li><a  data-role="button" href="/manager">Manager</a></li>
-            <li><a  data-role="button" href="/bar">Bar</a></li>
-            <li><a  data-role="button" href="/servers">Servers</a></li>
-            <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
             <li><a  data-role="button" href="/order">Order</a></li>
-
+            {% if session['role'] == 'bartender' %}
+                <li><a  data-role="button" href="/bar">Bar</a></li>
+            {% endif %}
+            {% if session['role'] == 'server' %}
+                <li><a  data-role="button" href="/servers">Servers</a></li>
+            {% endif %}
+            {% if session['role'] == 'cook' %}
+                <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
+            {% endif %}
+            {% if session['role'] == 'manager' %}
+                <li><a  data-role="button" href="/manager">Manager</a></li>
+                <li><a  data-role="button" href="/bar">Bar</a></li>
+                <li><a  data-role="button" href="/servers">Servers</a></li>
+                <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
+            {% endif %}
+            {% if session['role'} == 'admin' %}
+                <li><a data-role="button" href="/admin" class="ui-btn-active">Admin</a></li>
+                <li><a  data-role="button" href="/manager">Manager</a></li>
+                <li><a  data-role="button" href="/bar">Bar</a></li>
+                <li><a  data-role="button" href="/servers">Servers</a></li>
+                <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
+            {% endif %}
         </ul>
         {% block page_links %}
         {% endblock page_links %}
