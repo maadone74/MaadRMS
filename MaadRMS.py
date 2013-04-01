@@ -90,7 +90,7 @@ def get_bar():
 
 @app.route('/admin')
 def get_admin():
-    return 'Admin Page'
+    return render_template('admin_tpl.html')
 
 @app.route('/manager')
 def get_managers():
