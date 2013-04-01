@@ -1,0 +1,17 @@
+{% extends "master_tpl.html" %}
+{% block page_title %}Administrator Page for MaadRMS{% endblock page_title %}
+{% block page_links %}
+{% endblock page_links %}
+{% block page_header %}
+{% endblock page_header %}
+{% block page_body %}
+    {% if obj1 %}
+        <ul data-role="listview">
+            {% for cat in obj1 %}
+                <li><a href="#" >{{ cat }}</a></li>
+            {% endfor %}
+        </ul>
+    {%  endif %}
+{% endblock page_body %}
+{% block page_footer %}
+{% endblock page_footer %}
