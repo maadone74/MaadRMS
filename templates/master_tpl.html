@@ -11,34 +11,34 @@
 <body>
 <div data-role="page">
     <div data-role="panel" id="linkpanel" data-display="overlay">
-        <ul>
-            <li><a  data-role="button" href="/order">Order</a></li>
-            {% if session['role'] == 'bartender' %}
-                <li><a  data-role="button" href="/bar">Bar</a></li>
-            {% endif %}
-            {% if session['role'] == 'server' %}
-                <li><a  data-role="button" href="/servers">Servers</a></li>
-            {% endif %}
-            {% if session['role'] == 'cook' %}
-                <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
-            {% endif %}
-            {% if session['role'] == 'manager' %}
-                <li><a  data-role="button" href="/manager">Manager</a></li>
-                <li><a  data-role="button" href="/bar">Bar</a></li>
-                <li><a  data-role="button" href="/servers">Servers</a></li>
-                <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
-            {% endif %}
-            {% if session['role'} == 'admin' %}
-                <li><a data-role="button" href="/admin" class="ui-btn-active">Admin</a></li>
-                <li><a  data-role="button" href="/manager">Manager</a></li>
-                <li><a  data-role="button" href="/bar">Bar</a></li>
-                <li><a  data-role="button" href="/servers">Servers</a></li>
-                <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
-            {% endif %}
-        </ul>
+        {% if session['role'] %}
+            <ul>
+                <li><a  data-role="button" href="/order">Order</a></li>
+                {% if session.role == "bartender" %}
+                    <li><a  data-role="button" href="/bar">Bar</a></li>
+                {% elif session.role == "server" %}
+                    <li><a  data-role="button" href="/servers">Servers</a></li>
+                {% elif session.role == "cook" %}
+                    <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
+                {% elif session.role == "manager" %}
+                    <li><a  data-role="button" href="/manager">Manager</a></li>
+                    <li><a  data-role="button" href="/bar">Bar</a></li>
+                    <li><a  data-role="button" href="/servers">Servers</a></li>
+                    <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
+                {% elif session.role == "admin" %}
+                    <li><a data-role="button" href="/admin" class="ui-btn-active">Admin</a></li>
+                    <li><a  data-role="button" href="/manager">Manager</a></li>
+                    <li><a  data-role="button" href="/bar">Bar</a></li>
+                    <li><a  data-role="button" href="/servers">Servers</a></li>
+                    <li><a  data-role="button" href="/kitchen">Kitchen</a></li>
+                {%  else %}
+                {% endif %}
+
+                <li data-icon="delete"><a  data-role="button" href="#" data-rel="close">Close panel</a></li>
+            </ul>
+        {% endif %}
         {% block page_links %}
         {% endblock page_links %}
-        <li data-icon="delete"><a  data-role="button" href="#" data-rel="close">Close panel</a></li>
     </div>
    <!--- <div id="logo" ><img src="/static/images/MaadRMSLogo.png" /></div> -->
     {% if session['username'] %}
