@@ -43,12 +43,12 @@
     {% if session['username'] %}
     <header id="login_header" data-role="header">
         <a href="/logout" id="logout_link" >Log out</a>
-        <h1>MaadRMS Restaurant Mangement System Ver: {{ VERSION }}</h1>
+        <h1>MaadRMS Restaurant Management System Ver: {{ VERSION }}</h1>
         Logged on as {{ session['username'] }}
     {%  else %}
     <header id="login_header" data-role="header">
         <a href="/login" id="login_link" >Login</a>
-        <h2>MaadRMS Restaurant Mangement System Ver: {{ VERSION }}</h2>
+        <h2>MaadRMS Restaurant Management System Ver: {{ VERSION }}</h2>
     {% endif %}
         {% block page_header %}{% endblock page_header %}
     </header>
