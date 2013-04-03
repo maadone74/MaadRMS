@@ -1,3 +1,5 @@
+#! /usr/bin/python
+# -*- coding: utf-8 -*-
 # MaadRMS -- Open Source Restaurant Management System
 # Created by: Maadworks Software
 from flask import Flask, session, request, url_for, redirect, flash
