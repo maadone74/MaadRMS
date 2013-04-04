@@ -95,7 +95,10 @@ def get_bar():
 def get_admin(currentProcess = None):
     if currentProcess is None:
         currentProcess = 'default'
-    return render_template('admin_tpl.html', currentProcess=currentProcess)
+    configCollection = MaadRMSDB.configuration
+    configDoc = configCollection.find_one()
+    roles = configDoc['roles']
+    return render_template('admin_tpl.html', currentProcess=currentProcess, roles=roles)
 
 @app.route('/manager')
 def get_managers():
